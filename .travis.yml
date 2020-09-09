@@ -4,22 +4,14 @@ language: c
 
 matrix:
   include:
-    - env: CABALVER=2.2 GHCVER=8.4.1
+    - env: CABALVER=3.4 GHCVER=8.10.2
       addons: { 
         apt: {
-          packages: [cabal-install-2.2,ghc-8.4.1,libsdl2-dev,happy-1.19.5,alex-3.1.7,
+          packages: [cabal-install-3.4,ghc-8.10.2,libsdl2-dev,happy-1.19.5,alex-3.1.7,
                      libgirepository1.0-dev,libgtk-3-dev,libcairo2-dev,libcairo-gobject2], 
           sources: [hvr-ghc]
         }
       }
-    - env: CABALVER=2.0 GHCVER=8.0.2
-      addons: { 
-         apt: {
-           packages: [cabal-install-2.0,ghc-8.0.2,libsdl2-dev,happy-1.19.5,alex-3.1.7,
-                      libgirepository1.0-dev,libgtk-3-dev,libcairo2-dev,libcairo-gobject2], 
-           sources: [hvr-ghc]
-         }
-       } 
 
 before_install:
  - mkdir -p ~/.local/bin
@@ -33,7 +25,7 @@ install:
 # Here starts the actual work to be performed for the package under test; any command which exits with a non-zero exit code causes the build to fail.
 script:
  - travis_retry cabal update 
- - travis_retry cabal new-build all
+ - travis_retry cabal v2-build all
 
 cache:
  directories:
