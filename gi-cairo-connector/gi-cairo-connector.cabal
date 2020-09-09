@@ -7,7 +7,7 @@ Author:         Iñaki García Etxebarria,
                 Kilian Kilger
 Maintainer:     Kilian Kilger (kkilger@gmail.com)
 Build-Type:     Simple
-Cabal-Version:  >= 1.24
+Cabal-Version:  1.24
 Stability:      experimental
 homepage:       https://github.com/cohomology/gi-cairo-render
 bug-reports:    https://github.com/cohomology/gi-cairo-render/issues
